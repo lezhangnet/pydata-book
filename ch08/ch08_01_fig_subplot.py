@@ -1,4 +1,4 @@
-# run the following to "ipython --pylab"
+# run the following in "ipython --pylab"
 # the plot doesn't show with either "python x.py" or "python"
 
 # manual fig and subplot creation
@@ -18,12 +18,20 @@ ax2.scatter(np.arange(30), np.arange(30) + 3 * randn(30))
 plt.close('all')
 
 # auto plot - hiding fig and subplot creation
-plot([1.5, 3.5, -2, 1.6])
+plot([1.5, 3.5, -2, 1.6]) # showing Undefined error in VSCode
+plt.plot([1.5, 3.5, -2, 1.6]) # same as above
 
 # auto fig and subplot creation
 fig, axes = plt.subplots(2, 3) # 2 (rows) x 3 (columns)
 axes
 # array([[<AxesSubplot:>, <AxesSubplot:>, <AxesSubplot:>],
 #        [<AxesSubplot:>, <AxesSubplot:>, <AxesSubplot:>]], dtype=object)
-axes[0,1].plot(randn(50).cumsum(), 'k--') 
+axes[0,1].plot(randn(50).cumsum(), 'k--')
 # plot on 1st row, 2nd column subplot
+
+# adjusting spacing
+fig, axes = plt.subplots(2, 2, sharex=True, sharey=True)
+for i in range(2):
+    for j in range(2):
+        axes[i, j].hist(randn(500), bins=50, color='k', alpha=0.5)
+plt.subplots_adjust(wspace=0, hspace=0)

@@ -2,5 +2,10 @@ https://github.com/lezhangnet/pydata-book/tree/1st-edition
 
 ch02 - intro examples
 - ch02_01_vanilla.py
-appendix_python.ipynd - seems to have issues; not rendering in either VSCode or github
+
+ch08 - plotting & visualization
+- ch08_01_fig_subplot.py
+
+appendix_python.ipynd
+- seems to have issues; not rendering in either VSCode or github
 - code in myPythonBasics repo
